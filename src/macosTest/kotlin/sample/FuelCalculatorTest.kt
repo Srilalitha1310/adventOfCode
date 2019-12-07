@@ -12,4 +12,36 @@ class FuelCalculatorTest {
         val actual = calculateFuel(mass)
         assertEquals(expected, actual)
     }
+
+    @Test
+    fun shouldCalculateFuelForTheGivenMass14() {
+        var mass = 14
+        val expected = 2
+        val actual = calculateFuel(mass)
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun shouldCalculateFuelForTheGivenMass1969() {
+        var mass = 1969
+        val expected = 654
+        val actual = calculateFuel(mass)
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun shouldCalculateFuelForTheGivenMass100756() {
+        var mass = 100756
+        val expected = 33583
+        val actual = calculateFuel(mass)
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun shouldCalculateFuelForTheGivenMass142388() {
+        var mass = 142388
+        val expected = 33583
+        val actual = calculateFuel(mass)
+        assertEquals(expected, actual)
+    }
 }
