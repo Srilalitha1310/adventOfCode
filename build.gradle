@@ -18,6 +18,9 @@ kotlin {
                 runTask?.args('')
             }
         }
+        tasks.getByName(targetName + "Test").testLogging {
+            events "FAILED", "PASSED", "SKIPPED", "STARTED"
+        }
     }
     sourceSets {
         // Note: To enable common source sets please comment out 'kotlin.import.noCommonSourceSets' property
@@ -28,7 +31,6 @@ kotlin {
         }
     }
 }
-
 // Use the following Gradle tasks to run your application:
 // :runReleaseExecutableMacos - without debug symbols
 // :runDebugExecutableMacos - with debug symbols
