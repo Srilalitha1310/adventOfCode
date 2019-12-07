@@ -8,6 +8,4 @@ class SampleTests {
     fun testHello() {
         assertTrue("Kotlin/Native" in hello())
     }
-
-
 }

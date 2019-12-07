@@ -1,7 +1,18 @@
 package sample
 
+var sum = 0
+
 fun calculateFuel(mass: Int): Int{
     return mass.div(3).minus(2)
+}
+
+fun calculateRecurrentFuel(mass: Int): Int{
+    var fuel = calculateFuel(mass)
+    if(fuel <= 0) {
+        return sum
+    }
+    sum += fuel
+    return calculateRecurrentFuel(fuel)
 }
 
 fun main() {
@@ -14,11 +25,12 @@ fun main() {
         ,131819,67970,96436,107074,135588,97510,57877,114504,50521,100144,67840,51319,73801
         ,128333,123521,105916,92601,146340,135355,51461,95648,92635,126711,75717,136114,106814,89913,119734)
 
-    var sum = 0
+    var total = 0
 
     for(mass in masses) {
-        sum += calculateFuel(mass)
+        sum = 0
+        total += calculateRecurrentFuel(mass)
     }
 
-    print(sum)
+    print(total)
 }
